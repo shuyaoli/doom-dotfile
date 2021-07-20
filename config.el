@@ -5,7 +5,8 @@
       doom-variable-pitch-font (font-spec :family "sans serif" :size 18)
       display-line-numbers-type 'nil ; or nil or relative
       doom-theme 'doom-one
-      general-override-mode 't ; essential to Doom))
+      general-override-mode 't ; essential to Doom
+      )
 
 ;;; Setup doom default window setup
 (pushnew! default-frame-alist '(width . 80) '(height . 40)) ; 80 * 40
@@ -100,6 +101,7 @@
   (setq-default TeX-master nil)
   )
 
+;; non-evil fix for C-c C-f not working iin auctex
 (after! tex
   (map! :map latex-mode-map
         :leader
@@ -344,6 +346,7 @@
 ;;   (with-eval-after-load 'pdf-annot
 ;;     (add-hook 'pdf-annot-activate-handler-functions #'org-noter-pdftools-jump-to-note)))
 
+;; evil fix for C-t not working
 ;; (after! evil
 ;;   (map! :map evil-insert-state-map
 ;;         ("C-t" #'transpose-chars)))
