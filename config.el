@@ -5,7 +5,7 @@
       doom-variable-pitch-font (font-spec :family "sans serif" :size 18)
       display-line-numbers-type 'nil ; or nil or relative
       doom-theme 'doom-one
-      general-override-mode 't ; essential to Doom)
+      general-override-mode 't ; essential to Doom))
 
 ;;; Setup doom default window setup
 (pushnew! default-frame-alist '(width . 80) '(height . 40)) ; 80 * 40
@@ -98,8 +98,14 @@
    TeX-electric-math (cons "\\(" "")
    )
   (setq-default TeX-master nil)
-
   )
+
+(after! tex
+  (map! :map latex-mode-map
+        :leader
+        :desc "Font" "C-f" #'TeX-font)
+)
+
 
 (use-package! org
   :init
