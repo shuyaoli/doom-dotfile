@@ -102,12 +102,7 @@
   )
 
 ;; non-evil fix for C-c C-f not working iin auctex
-(after! tex
-  (map! :map latex-mode-map
-        :leader
-        :desc "Font" "C-f" #'TeX-font)
-)
-
+(map! :leader "C-f" nil)
 
 (use-package! org
   :init
