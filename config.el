@@ -5,7 +5,7 @@
       doom-variable-pitch-font (font-spec :family "sans serif" :size 18)
       display-line-numbers-type 'nil ; or nil or relative
       doom-theme 'doom-one
-      general-override-mode 'nil)
+      general-override-mode 't ; essential to Doom)
 
 ;;; Setup doom default window setup
 (pushnew! default-frame-alist '(width . 80) '(height . 40)) ; 80 * 40
@@ -28,8 +28,8 @@
 
 (setq use-package-enable-imenu-support t)
 
-(map! :map general-override-mode-map
-      :ei "s-SPC" #'doom/leader)
+;; (map! :map general-override-mode-map
+      ;; :ei "s-SPC" #'doom/leader)
 
 (when (featurep 'ns)
   (defun ns-raise-emacs ()

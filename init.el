@@ -169,7 +169,7 @@
        ;;yaml              ; JSON, but readable
 
        :email
-       ;;(mu4e +gmail)
+       ;;(mu4e +gmail)     ; TODO mu4e is also good
        ;;notmuch
        ;;(wanderlust +gmail)
 
