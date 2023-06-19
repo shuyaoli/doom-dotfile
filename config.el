@@ -15,7 +15,7 @@
 
 ;; Set org-directory must be set before org loads!
 (setq org-directory "~/Documents/org/"
-      org-roam-directory "~/Dropbox (MIT)/org-roam-notes/")
+      org-roam-directory "~/Documengts/org-roam-notes/")
 
 (if (daemonp)
     (setq use-package-always-demand t))
@@ -103,7 +103,16 @@
 
 ;; non-evil fix for C-c C-f not working iin auctex
 (map! :leader "C-f" nil)
-
+(use-package! tramp
+  :init
+  (setq!
+   tramp-default-method "ssh"
+   tramp-default-user "shuyaol"
+   tramp-default-host "best-linux.cs.wisc.edu"
+   password-cache-expiry nil
+   )
+  )
+  
 (use-package! org
   :init
   (custom-set-faces!
